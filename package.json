@@ -1,0 +1,24 @@
+{
+  "name": "amirzhanovqa",
+  "version": "1.0.0",
+  "description": "My test data",
+  "main": "index.js",
+  "dependencies": {
+    "typescript": "^4.9.3"
+  },
+  "type": "module",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AmirzhanovRenat/AmirzhanovQA.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AmirzhanovRenat/AmirzhanovQA/issues"
+  },
+  "homepage": "https://github.com/AmirzhanovRenat/AmirzhanovQA#readme"
+}

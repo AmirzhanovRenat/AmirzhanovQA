@@ -7,7 +7,6 @@
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/config.js":
@@ -16,7 +15,8 @@
   \***********************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"func\": () => (/* binding */ func)\n/* harmony export */ });\nfunction func() {\n    console.log(1111);\n}\n\n\n//# sourceURL=webpack://amirzhanovqa/./src/config.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"func\": () => (/* binding */ func)\n/* harmony export */ });\nfunction func() {\r\n    console.log(1111);\r\n}\r\n\n\n//# sourceURL=webpack://amirzhanovqa/./src/config.js?");
 
 /***/ }),
 
@@ -26,7 +26,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _config_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./config.js */ \"./src/config.js\");\n\n\n(0,_config_js__WEBPACK_IMPORTED_MODULE_0__.func)();\n\n\n//# sourceURL=webpack://amirzhanovqa/./src/index.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _config_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./config.js */ \"./src/config.js\");\n/* harmony import */ var _myApplication_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./myApplication.js */ \"./src/myApplication.js\");\n\r\n\r\n(0,_config_js__WEBPACK_IMPORTED_MODULE_0__.func)();\r\nconsole.log(_myApplication_js__WEBPACK_IMPORTED_MODULE_1__.app);\r\n\n\n//# sourceURL=webpack://amirzhanovqa/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/myApplication.js":
+/*!******************************!*\
+  !*** ./src/myApplication.js ***!
+  \******************************/
+/***/ (() => {
+
+eval("throw new Error(\"Module parse failed: Unexpected token (2:0)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n| export * as app \\n> var app = 777;\\n| \");\n\n//# sourceURL=webpack://amirzhanovqa/./src/myApplication.js?");
 
 /***/ })
 

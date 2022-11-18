@@ -1,1 +1,3 @@
-let app: number = 777;
+export function func(test1: number) {
+    return test1 ** 2;
+}

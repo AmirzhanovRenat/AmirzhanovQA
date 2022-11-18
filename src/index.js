@@ -1,4 +1,4 @@
-import { func } from './config.js';
-import app from './myApplication.js';
-func();
-console.log(app.app);
+//import { func } from './config.js';
+import { func } from './myApplication.js';
+
+func(2);

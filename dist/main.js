@@ -16,45 +16,14 @@
   \**********************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _myApplication_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./myApplication.js */ \"./src/myApplication.js\");\n//import { func } from './config.js';\n\n\n(0,_myApplication_js__WEBPACK_IMPORTED_MODULE_0__.func)(2);\n\n\n//# sourceURL=webpack://amirzhanovqa/./src/index.js?");
-
-/***/ }),
-
-/***/ "./src/myApplication.js":
-/*!******************************!*\
-  !*** ./src/myApplication.js ***!
-  \******************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n\nexports.__esModule = true;\nfunction func(test1) {\n    return Math.pow(test1, 2);\n}\nexports.func = func;\n\n\n//# sourceURL=webpack://amirzhanovqa/./src/myApplication.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nlet button = document.querySelector('#button');\r\nlet input = document.querySelector('#input');\r\nlet p = document.querySelector('#p');\r\nbutton.addEventListener('click', function () {\r\n    input.value = p.textContent;\r\n    p.textContent = '';\r\n});\r\nvxc\n\n//# sourceURL=webpack://amirzhanovqa/./src/index.js?");
 
 /***/ })
 
 /******/ 	});
 /************************************************************************/
-/******/ 	// The module cache
-/******/ 	var __webpack_module_cache__ = {};
-/******/ 	
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/ 		// Check if module is in cache
-/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
-/******/ 		if (cachedModule !== undefined) {
-/******/ 			return cachedModule.exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			// no module.id needed
-/******/ 			// no module.loaded needed
-/******/ 			exports: {}
-/******/ 		};
-/******/ 	
-/******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
+/******/ 	// The require scope
+/******/ 	var __webpack_require__ = {};
 /******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/make namespace object */
@@ -73,7 +42,8 @@ eval("__webpack_require__.r(__webpack_exports__);\n\nexports.__esModule = true;\
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/index.js");
+/******/ 	var __webpack_exports__ = {};
+/******/ 	__webpack_modules__["./src/index.js"](0, __webpack_exports__, __webpack_require__);
 /******/ 	
 /******/ })()
 ;

@@ -5,7 +5,7 @@
         appTitle.innerHTML = title;
         return title;
     }
-    //Создаем и возвращяем форму для создания дела
+    //Создаем и возвращаем форму для создания дела
 
     function createToDoItemForm() {
         let form = document.createElement('form');
@@ -27,7 +27,7 @@
         return { form, input, button };
     }
 
-    //Создаем и возвращяем список элемнетов
+    //Создаем и возвращаем список элемнетов
 
     function createToDoList() {
         let list = document.createElement('li');

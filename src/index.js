@@ -98,7 +98,7 @@
             });
 
             //Создаем и добавляем в списое новое дело с названием из поля ввода
-            todoList.append(createTodoItem(todoItemForm.input.value).item);
+            todoList.append(todoItem.item);
             //Обнуляем значения поля
             todoItemForm.input.value = '';
         });

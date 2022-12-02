@@ -1,30 +1,35 @@
 {
-  "name": "amirzhanovqa",
-  "version": "1.0.0",
-  "description": "My test data",
-  "main": "index.js",
-  "dependencies": {
-    "bootstrap": "^5.2.2",
-    "lodash": "^4.17.21"
-  },
-  "devDependencies": {
-    "typescript": "^4.9.3",
-    "webpack": "^5.75.0",
-    "webpack-cli": "^4.10.0"
-  },
-  "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AmirzhanovRenat/AmirzhanovQA.git"
-  },
-  "author": "Amirzhanov Renat",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/AmirzhanovRenat/AmirzhanovQA/issues"
-  },
-  "homepage": "https://github.com/AmirzhanovRenat/AmirzhanovQA#readme"
+    "name": "amirzhanovqa",
+    "version": "1.0.0",
+    "description": "My test data",
+    "main": "index.js",
+    "dependencies": {
+        "bootstrap": "^5.2.2",
+        "jest": "^29.3.1",
+        "jest-puppeteer": "^6.1.1",
+        "lodash": "^4.17.21",
+        "puppeteer": "^19.3.0",
+        "puppeteer-core": "^19.3.0"
+    },
+    "devDependencies": {
+        "typescript": "^4.9.3",
+        "webpack": "^5.75.0",
+        "webpack-cli": "^4.10.0"
+    },
+    "type": "module",
+    "scripts": {
+        "test": "",
+        "build": "webpack",
+        "autotest": "jest ./autotest/autotest.test.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/AmirzhanovRenat/AmirzhanovQA.git"
+    },
+    "author": "Amirzhanov Renat",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/AmirzhanovRenat/AmirzhanovQA/issues"
+    },
+    "homepage": "https://github.com/AmirzhanovRenat/AmirzhanovQA#readme"
 }

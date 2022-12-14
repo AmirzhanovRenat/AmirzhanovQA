@@ -1,5 +1,3 @@
-
-
 module.exports = {
-    one: 'https://www.youtube.com/'
-}
+    one: 'https://www.amazon.com/ref=nav_logo',
+};

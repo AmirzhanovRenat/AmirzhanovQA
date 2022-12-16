@@ -2,7 +2,7 @@ const puppeteer = require('puppeteer');
 const { one } = require('./index');
 //const confJP = require('./jest-puppeteer.config');
 describe('MyTestAQA', () => {
-    test(`Переходим на YouTube`, async () => {
+    test(`Переходим на amazon`, async () => {
         const browser = await puppeteer.launch({ headless: false });
         const page = await browser.newPage();
         //await page.tracing.start({ path: 'trace.json' });

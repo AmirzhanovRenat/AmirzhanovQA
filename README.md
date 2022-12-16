@@ -9,3 +9,6 @@ dist/myApp.html мой тестовый проект
 ./dist/main.js - bundle
 
 ./src/index.js - entry point
+
+ Папка autotest - автотесты
+ 

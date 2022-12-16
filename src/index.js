@@ -99,7 +99,7 @@
 
             //Создаем и добавляем в списое новое дело с названием из поля ввода
             todoList.append(todoItem.item);
-            //Обнуляем значения поля
+            //Обнуляем значения поляlist-group-item', 'd-flex', 'justify-content-between', 'align-items-center
             todoItemForm.input.value = '';
         });
     });

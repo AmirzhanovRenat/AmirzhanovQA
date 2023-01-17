@@ -18,12 +18,107 @@
     </head>
     <body>
         <div id="todo-app" class="container"></div>
-
-        <!-- !!!---------------------------------------------- -->
+        <!-- gh!!!---------------------------------------------- -->
     </body>
     <script>
-   
+        // * - ноль или более раз, буква
+        // ? - ноль или один раз, буква
+        // + - один или более раз, буква
+        //Являются спецсимволами: $ ^ . * + ? \ / {} [] () |
+        //Не являются спецсимволами: @ : , ' " ; - _ = < > % # ~ `& !
+        // let a = '1999';
+        // console.log(/^[0-9]{4}$/.test(a));
 
+        // let str = 'site.ru sss site.com zzz site.net site15345.net';
 
+        // let aa = str.match(/([a-z1-9]+.ru)|([a-z1-9]+.com|[a-z1-9]+.net)/g);
+
+        // console.log(aa);
+
+        // try {
+        //     let json = '{"product": "яблоко", "amount": 5}';
+        //     let product = JSON.parse(json);
+
+        //     if (product.price !== undefined && product.amount !== undefined) {
+        //         alert(product.price * product.amount);
+        //     } else {
+        //         throw {
+        //             name: 'ProductCostError',
+        //             message: 'отсутствует цена или количество у продукта',
+        //         };
+        //     }
+        // } catch (error) {
+        //     if (error.name == 'SyntaxError') {
+        //         console.log(' Ошибка ');
+        //     } else if (error.name == 'ProductCostError') {
+        //         console.log(error.message);
+        //     }
+        // }
+
+        //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        // function func(num) {
+        //     if (num > 0) {
+        //         return new Promise((resolve) => {
+        //             setTimeout(() => {
+        //                 resolve(console.log(num ** 3));
+        //             }, 2000);
+        //         });
+        //     } else if (num === 0) {
+        //         return Promise.resolve(0).then((s) => {
+        //             console.log(num + 'nulll');
+        //         });
+        //     } else {
+        //         return Promise.reject('neeet');
+        //     }
+        // }
+
+        // //func(0)
+
+        // let promise = new Promise((resolve, reject) => {
+        //     let a = 120;
+        //     if (a === 10) {
+        //         resolve(a ** 2);
+        //     } else {
+        //         throw new Error('bbaaaaddd');
+        //     }
+        // });
+
+        // promise
+        //     .then((a) => {
+        //         return a;
+        //     })
+        //     .then((s) => {
+        //         return s + 5;
+        //     })
+        //     .then((s) => {
+        //         return console.log(s + 5);
+        //     })
+        //     .catch(console.error())
+        //     .finally((s) => {
+        //         console.log('Vse goood');
+        //     });
+
+        //!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+        // let a = '[1,2,3,4,5,6,]';
+
+        // let json = JSON.parse(a);
+        // //  console.log(Array.isArray(json));
+
+        // let promise = new Promise((resolve, reject) => {
+        //     if (Array.isArray(json)) {
+        //         resolve(json.map((num) => num ** 2));
+        //     } else {
+        //         reject(console.log('baddd'));
+        //     }
+        // })
+        //     .then((res) => {
+        //         return res.map((num) => num * 2);
+        //     })
+        //     .then((res) => {
+        //         console.log(res);
+        //     })
+        //     .catch(console.error());
+        
     </script>
 </html>

@@ -10,5 +10,6 @@ dist/myApp.html мой тестовый проект
 
 ./src/index.js - entry point
 
- Папка autotest - автотесты
- 
+Папка autotest - автотесты
+
+Папка vue/проект на вью

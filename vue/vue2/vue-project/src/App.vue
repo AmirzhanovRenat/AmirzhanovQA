@@ -1,49 +1,64 @@
 <template>
     <div class="app">
-        <div>
-            <form>
-                <h4>Создание поста</h4>
-                <input
-                    @input="body = $event.target.value"
-                    v-bind:value="body"
-                    class="input"
-                    type="text"
-                    placeholder="Описание"
-                />
-                <input @input="inputTitle" v-bind:value="title" class="input" type="text" placeholder="Название" />
-
-                <button class="btn" @click="createPosts">Создать</button>
-            </form>
-        </div>
-        <div class="post" v-for="post in posts">
-            <div><strong>Name:</strong>{{ post.title }}</div>
-            <div><strong>Opisanie:</strong>{{ post.body }}</div>
-            <div><strong>Zvanie:</strong>{{ post.id }}</div>
-        </div>
+        <h1 style="text-align: center">Страница с постами</h1>
+        <!-- <MyButton style="margin: 15px" @click="fetchPosts"> Получить посты </MyButton> -->
+        <MyButton @click="showDialog" style="margin: 15px 0"> Создать пользователя</MyButton>
+        <MyDialog v-model:show="dialogVisibl">
+            <postForm @create="createPost" />
+        </MyDialog>
+        <post-list v-if="!isPostLoading" :posts="posts" @remove="removePost" />
+        <div v-else>Идет загрузка...</div>
     </div>
 </template>
 
 <script>
+import postForm from './components/postForm.vue';
+import postList from './components/postList.vue';
+import MyButton from './components/UI/MyButton.vue';
+import MyDialog from './components/UI/MyDialog.vue';
+import axios from 'axios';
 export default {
+    components: {
+        postForm,
+        postList,
+        MyDialog,
+        MyButton,
+    },
     data() {
         return {
-            posts: [
-                { id: 1, title: 'JavaScript', body: 'Описание поста 1' },
-                { id: 2, title: 'JavaScript', body: 'Описание поста 2' },
-                { id: 3, title: 'JavaScript', body: 'Описание поста 3' },
-                { id: 4, title: 'JavaScript', body: 'Описание поста 4' },
-                
-            ],
-            body: '',
-            title: '',
+            posts: [],
+            dialogVisibl: false,
+            isPostLoading: false,
         };
     },
     methods: {
-        createPosts: function () {},
-        inputTitle: function (event) {
-            this.title = event.target.value;
-            // console.log(event);
+        createPost(posts) {
+            this.posts.push(posts);
+            this.dialogVisibl = false;
         },
+        removePost(posts) {
+            this.posts = this.posts.filter((p) => p.id !== post.id);
+        },
+        showDialog() {
+            this.dialogVisibl = true;
+        },
+        async fetchPosts() {
+            try {
+                this.isPostLoading = true;
+                setTimeout(async () => {
+                    const response = await axios.get('https://jsonplaceholder.typicode.com/posts?_limit=10');
+                    this.posts = response.data;
+                    this.isPostLoading = false;
+                }, 1000);
+            } catch (erorr) {
+                alert('Ошибка');
+            } finally {
+               
+            }
+        },
+    },
+    mounted() {
+        this.fetchPosts();
     },
 };
 </script>
@@ -54,31 +69,9 @@ export default {
     padding: 0;
     box-sizing: border-box;
 }
-.post {
-    padding: 15px;
-    border: 3px solid green;
-    margin: 15px;
-}
-.input {
-    width: 100%;
-    border: 3px solid green;
-    padding: 10px 15px;
-    margin-top: 10px;
-}
+
 .app {
     /* margin: 10px; */
     padding: 10px;
-}
-form {
-    display: flex;
-    flex-direction: column;
-}
-.btn {
-    align-self: flex-end;
-    margin-top: 15px;
-    padding: 10px 15px;
-    background: none;
-    color: teal;
-    border: 1px solid teal;
 }
 </style>

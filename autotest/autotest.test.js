@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 const { one } = require('./index');
-import {screen} from '@testing-library/dom'
+//npm run autotest
 
 //const confJP = require('./jest-puppeteer.config');
 describe('MyTestAQA', () => {
@@ -19,12 +19,12 @@ describe('MyTestAQA', () => {
 
         //Жмем Electronics
         await page.waitForSelector('.hmenu-item .nav-sprite.hmenu-arrow-next');
-        await r.click[4]('.hmenu-item .nav-sprite.hmenu-arrow-next')
+        await r.click[4]('.hmenu-item .nav-sprite.hmenu-arrow-next');
 
         await page.$$eval('.hmenu-item .nav-sprite.hmenu-arrow-next', (elements) => {
             return elements[4].click();
         });
-         await page.tracing.stop();
+        await page.tracing.stop();
 
         await page.waitForSelector('.hmenu.hmenu-visible.hmenu-translateX .hmenu-item');
 
@@ -35,7 +35,7 @@ describe('MyTestAQA', () => {
         expect(screen.getByTestId('start')).toContainHTML(
             '<button id="button" class="style-scope yt-icon-button" aria-label="Гид" aria-pressed="false"></button>'
         );
-            document.body.innerHTML = `
+        document.body.innerHTML = `
             <div id="start" class="style-scope ytd-masthead"></div>
           `;
 

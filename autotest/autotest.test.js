@@ -1,5 +1,4 @@
 const puppeteer = require('puppeteer');
-const { one } = require('./index');
 //npm run autotest
 
 //const confJP = require('./jest-puppeteer.config');
@@ -9,6 +8,8 @@ describe('MyTestAQA', () => {
         const page = await browser.newPage();
         //await page.tracing.start({ path: 'trace.json' });
         await page.goto('https://www.amazon.com/ref=nav_logo', { waitUntil: 'domcontentloaded' });
+
+        await page.setViewport({width: 1920, height: 1080});
 
         //Ожидаем Селектор кнопки Start
         await page.waitForSelector('.hm-icon.nav-sprite', {

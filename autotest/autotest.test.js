@@ -1,55 +1,75 @@
 const puppeteer = require('puppeteer');
 //npm run autotest
 
-//const confJP = require('./jest-puppeteer.config');
+jest.setTimeout(60000);
 describe('MyTestAQA', () => {
-    test(`Переходим на amazon`, async () => {
-        const browser = await puppeteer.launch({ headless: false });
+    test(`Переходим на tages`, async () => {
+        const browser = await puppeteer.launch({
+            headless: false,
+            slowMo: 100,
+
+            defaultViewport: { width: 1920, height: 1080 },
+            args: [
+                '--no-first-run',
+                '--no-sandbox',
+                '--no-zygote',
+                '--single-process', // <- this one doesn't works in Windows
+                '--disable-accelerated-2d-canvas',
+                '--start-maximized',
+                '--ignore-certificate-errors',
+            ],
+        });
+
         const page = await browser.newPage();
-        //await page.tracing.start({ path: 'trace.json' });
-        await page.goto('https://www.amazon.com/ref=nav_logo', { waitUntil: 'domcontentloaded' });
+        const url = 'https://tages.ru/';
+        await page.goto(url, { waitUntil: 'domcontentloaded' });
 
-        await page.setViewport({width: 1920, height: 1080});
+        // О компаниии
+        let aboutCompany = await page.$$('[href="/about"]');
+        await aboutCompany[0].click();
 
-        //Ожидаем Селектор кнопки Start
-        await page.waitForSelector('.hm-icon.nav-sprite', {
-            visible: true,
+        //academy
+        let academy = await page.$$('[href="/academy"]');
+        await academy[0].click();
+        //events
+        let events = await page.$$('[href="/events"]');
+        await events[0].click();
+
+        //  Blog
+        await page.goto('https://tages.ru/blog/');
+
+        // vacancies;
+        let vacancies = await page.$$('[href="/vacancies"]');
+        await vacancies[0].click();
+
+        //contacks
+        await page.waitForSelector('[href="/contacts"]');
+        let contacks = await page.$$('[href="/contacts"]');
+        await contacks[0].click();
+
+        let head = await page.waitForSelector('.header__logo');
+        await head.click();
+
+        //form
+        let form = await page.$$eval('.link.section-promo__call-to-action-link', (element) => {
+            return element[0].href;
         });
-        //Кликаем по ней
-        await page.click('.hm-icon.nav-sprite');
+        await page.goto(form);
 
-        //Жмем Electronics
-        await page.waitForSelector('.hmenu-item .nav-sprite.hmenu-arrow-next');
-        await r.click[4]('.hmenu-item .nav-sprite.hmenu-arrow-next');
+        //validation
+        await page.type('[placeholder="Имя*"]', 'Амиржанов Ренат');
+        await page.type('[placeholder="Телефон*"]', '9277473307');
+        await page.type('[placeholder="Компания"]', 'тагес');
+        await page.type('[placeholder="Почта*"]', 'art56410@yandex.ru');
+        await page.type('[placeholder="Комментарий"]', 'test comment');
 
-        await page.$$eval('.hmenu-item .nav-sprite.hmenu-arrow-next', (elements) => {
-            return elements[4].click();
-        });
-        await page.tracing.stop();
-
-        await page.waitForSelector('.hmenu.hmenu-visible.hmenu-translateX .hmenu-item');
-
-        await page.$$eval('.hmenu.hmenu-visible.hmenu-translateX .hmenu-item', (elements) => {
-            return elements[8].click();
+        //click button
+        await page.$('.form__send-form-button.button', (elem) => {
+            return elem.click();
         });
 
-        expect(screen.getByTestId('start')).toContainHTML(
-            '<button id="button" class="style-scope yt-icon-button" aria-label="Гид" aria-pressed="false"></button>'
-        );
-        document.body.innerHTML = `
-            <div id="start" class="style-scope ytd-masthead"></div>
-          `;
+        // expect('.form__success-badge-title'.innerHTML).toEqul('Ваше обращение получено');
 
-        expect(queryByTestId('not-empty')).not.toBeEmptyDOMElement();
-        expect(getByText('Visible Example')).toBeVisible();
-
-        document.body.innerHTML = `
-        <span data-testid="not-empty"><span data-testid="empty"></span></span>
-        <div data-testid="visible">Visible Example</div>
-      `;
-
-        expect(screen.queryByTestId('not-empty')).not.toBeEmptyDOMElement();
-        expect(screen.getByText('Visible Example')).toBeVisible();
         await browser.close();
     });
 });

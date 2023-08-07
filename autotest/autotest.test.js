@@ -5,7 +5,7 @@ jest.setTimeout(60000);
 describe('MyTestAQA', () => {
     test(`Переходим на tages`, async () => {
         const browser = await puppeteer.launch({
-            headless: false,
+            headless: true,
             slowMo: 100,
 
             defaultViewport: { width: 1920, height: 1080 },
